@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>All About Me</title>
-    <link rel="stylesheet" href="css/reset.css">
+    <!-- <link rel="stylesheet" href="css/reset.css"> -->
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -52,7 +52,7 @@
         var el = document.getElementById('score');
         el.textContent = score;
       </script>
-    </span> out of 5 right. <span id="comment-on-score">
+      </span> out of 5 right. <span id="comment-on-score">
       <script>
         var el = document.getElementById('comment-on-score');
         if (score === 5) {
@@ -62,6 +62,8 @@
         } else { // (score <= 2)
           el.textContent = 'Man, that score blows. You need to have a conversation with me sometime soon and get some answers!';
         }
-      </script></span></p>
+      </script>
+      </span>
+    </p>
   </body>
 </html>
