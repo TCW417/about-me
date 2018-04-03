@@ -10,10 +10,10 @@
  */
 
 var guess = new Array(); // users answers to questions
-var questions = [ 'Am I the middle sibling in my family?', 
-  'Do I have an odd number of siblings?', 
-  'Am I married with children?', 
-  'Do I actually have a thick head of hair I just shave off?', 
+var questions = [ 'Am I the middle sibling in my family?',
+  'Do I have an odd number of siblings?',
+  'Am I married with children?',
+  'Do I actually have a thick head of hair I just shave off?',
   'Do I look like Santa Clause in the winter?'
 ];
 var answers = ['N', 'Y', 'Y', 'N', 'Y']; // array holding corresponding answers
