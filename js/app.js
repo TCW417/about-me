@@ -27,35 +27,35 @@ guess[i] = prompt(questions[i]);
 if ((guess[i].toUpperCase().charAt(0)) === answers[i]) {
   score++;
 }
-console.log(questions[i], 'User input:', guess[i], 'Right anwser:', answers[i],'\n');
+console.log(questions[i], 'User input:', guess[i], 'Right answer:', answers[i],'\n');
 
 i++; // 2...
 guess[i] = prompt(questions[i]);
 if ((guess[i].toUpperCase().charAt(0)) === answers[i]) {
   score++;
 }
-console.log(questions[i], 'User input:', guess[i], 'Right anwser:', answers[i],'\n');
+console.log(questions[i], 'User input:', guess[i], 'Right answer:', answers[i],'\n');
 
 i++; // 3...
 guess[i] = prompt(questions[i]);
 if ((guess[i].toUpperCase().charAt(0)) === answers[i]) {
   score++;
 }
-console.log(questions[i], 'User input:', guess[i], 'Right anwser:', answers[i],'\n');
+console.log(questions[i], 'User input:', guess[i], 'Right answer:', answers[i],'\n');
 
 i++; // 4...
 guess[i] = prompt(questions[i]);
 if ((guess[i].toUpperCase().charAt(0)) === answers[i]) {
   score++;
 }
-console.log(questions[i], 'User input:', guess[i], 'Right anwser:', answers[i],'\n');
+console.log(questions[i], 'User input:', guess[i], 'Right answer:', answers[i],'\n');
 
 i++; // 5...
 guess[i] = prompt(questions[i]);
 if ((guess[i].toUpperCase().charAt(0)) === answers[i]) {
   score++;
 }
-console.log(questions[i], 'User input:', guess[i], 'Right anwser:', answers[i],'\n');
+console.log(questions[i], 'User input:', guess[i], 'Right answer:', answers[i],'\n');
 
 //
 // Now use the answers to fill in the html page...
