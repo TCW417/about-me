@@ -65,7 +65,9 @@ ol {
 }
 
 li {
-  height: 105%;
+  height: 115%;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 strong {
