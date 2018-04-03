@@ -65,23 +65,48 @@ var elIds = ['q1', 'q2', 'q3', 'q4', 'q5'];
 
 i = 0;
 var el = document.getElementById(elIds[i]);
-el.textContent = questions[i] + ' You answered ' + guess[i] + ', the correct answer was ' + answers[i];
+el.textContent = questions[i] + ' You answered ' + guess[i] + ', the correct answer was ';
+if (answers[i] === 'Y') {
+  el.textContent += 'Yes.';
+} else {
+  el.textContent += 'No.';
+}
 
 i++;
 el = document.getElementById(elIds[i]);
-el.textContent = questions[i] + ' You answered ' + guess[i] + ', the correct answer was ' + answers[i];
+el.textContent = questions[i] + ' You answered ' + guess[i] + ', the correct answer was ';
+if (answers[i] === 'Y') {
+  el.textContent += 'Yes.';
+} else {
+  el.textContent += 'No.';
+}
 
 i++;
 el = document.getElementById(elIds[i]);
-el.textContent = questions[i] + ' You answered ' + guess[i] + ', the correct answer was ' + answers[i];
+el.textContent = questions[i] + ' You answered ' + guess[i] + ', the correct answer was ';
+if (answers[i] === 'Y') {
+  el.textContent += 'Yes.';
+} else {
+  el.textContent += 'No.';
+}
 
 i++;
 el = document.getElementById(elIds[i]);
-el.textContent = questions[i] + ' You answered ' + guess[i] + ', the correct answer was ' + answers[i];
+el.textContent = questions[i] + ' You answered ' + guess[i] + ', the correct answer was ';
+if (answers[i] === 'Y') {
+  el.textContent += 'Yes.';
+} else {
+  el.textContent += 'No.';
+}
 
 i++;
 el = document.getElementById(elIds[i]);
-el.textContent = questions[i] + ' You answered ' + guess[i] + ', the correct answer was ' + answers[i];
+el.textContent = questions[i] + ' You answered ' + guess[i] + ', the correct answer was ';
+if (answers[i] === 'Y') {
+  el.textContent += 'Yes.';
+} else {
+  el.textContent += 'No.';
+}
 
 //
 // Fill in score and fill in final bit of trash talk.
