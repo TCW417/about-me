@@ -20,42 +20,36 @@ var answers = ['N', 'Y', 'Y', 'N', 'Y']; // array holding corresponding answers
 var score = 0; //keep score
 
 var i = 0; // all of this code belongs in a loop but we don't know how to do that yet.  ;-)
-if ((guess[i] = prompt(questions[i]).toUpperCase().charAt(0)) === answers[i]) {
+guess[i] = prompt(questions[i]);
+if ((guess[i].toUpperCase().charAt(0)) === answers[i]) {
   score++;
-// } else {
-//   alert('Ooh, sorry. That\'s not right');
 }
 console.log(questions[i], 'User input:', guess[i], 'Right anwser:', answers[i],'\n');
+
 i++;
-if ((guess[i] = prompt(questions[i]).toUpperCase().charAt(0)) === answers[i]) {
+guess[i] = prompt(questions[i]);
+if ((guess[i].toUpperCase().charAt(0)) === answers[i]) {
   score++;
-  //   alert('That\'s right!');
-// } else {
-//   alert('Ooh, sorry. That\'s not right');
 }
 console.log(questions[i], 'User input:', guess[i], 'Right anwser:', answers[i],'\n');
+
 i++;
-if ((guess[i] = prompt(questions[i]).toUpperCase().charAt(0)) === answers[i]) {
+guess[i] = prompt(questions[i]);
+if ((guess[i].toUpperCase().charAt(0)) === answers[i]) {
   score++;
-  //   alert('That\'s right!');
-// } else {
-//   alert('Ooh, sorry. That\'s not right');
 }
 console.log(questions[i], 'User input:', guess[i], 'Right anwser:', answers[i],'\n');
+
 i++;
-if ((guess[i] = prompt(questions[i]).toUpperCase().charAt(0)) === answers[i]) {
+guess[i] = prompt(questions[i]);
+if ((guess[i].toUpperCase().charAt(0)) === answers[i]) {
   score++;
-  //   alert('That\'s right!');
-// } else {
-//   alert('Ooh, sorry. That\'s not right');
 }
 console.log(questions[i], 'User input:', guess[i], 'Right anwser:', answers[i],'\n');
+
 i++;
-if ((guess[i] = prompt(questions[i]).toUpperCase().charAt(0)) === answers[i]) {
+guess[i] = prompt(questions[i]);
+if ((guess[i].toUpperCase().charAt(0)) === answers[i]) {
   score++;
-  //   alert('That\'s right!');
-// } else {
-//   alert('Ooh, sorry. That\'s not right');
 }
 console.log(questions[i], 'User input:', guess[i], 'Right anwser:', answers[i],'\n');
-i++;
