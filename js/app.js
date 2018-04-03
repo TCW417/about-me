@@ -17,40 +17,45 @@ var questions = [ 'Am I the middle sibling in my family?',
   'Do I look like Santa Clause in the winter?'
 ];
 var answers = ['N', 'Y', 'Y', 'N', 'Y']; // array holding corresponding answers
+var score = 0; //keep score
 
 var i = 0; // all of this code belongs in a loop but we don't know how to do that yet.  ;-)
 if ((guess[i] = prompt(questions[i]).toUpperCase().charAt(0)) === answers[i]) {
-  alert('That\'s right!');
-} else {
-  alert('Ooh, sorry. That\'s not right');
+  score++;
+// } else {
+//   alert('Ooh, sorry. That\'s not right');
 }
 console.log(questions[i], 'User input:', guess[i], 'Right anwser:', answers[i],'\n');
 i++;
 if ((guess[i] = prompt(questions[i]).toUpperCase().charAt(0)) === answers[i]) {
-  alert('That\'s right!');
-} else {
-  alert('Ooh, sorry. That\'s not right');
+  score++;
+  //   alert('That\'s right!');
+// } else {
+//   alert('Ooh, sorry. That\'s not right');
 }
 console.log(questions[i], 'User input:', guess[i], 'Right anwser:', answers[i],'\n');
 i++;
 if ((guess[i] = prompt(questions[i]).toUpperCase().charAt(0)) === answers[i]) {
-  alert('That\'s right!');
-} else {
-  alert('Ooh, sorry. That\'s not right');
+  score++;
+  //   alert('That\'s right!');
+// } else {
+//   alert('Ooh, sorry. That\'s not right');
 }
 console.log(questions[i], 'User input:', guess[i], 'Right anwser:', answers[i],'\n');
 i++;
 if ((guess[i] = prompt(questions[i]).toUpperCase().charAt(0)) === answers[i]) {
-  alert('That\'s right!');
-} else {
-  alert('Ooh, sorry. That\'s not right');
+  score++;
+  //   alert('That\'s right!');
+// } else {
+//   alert('Ooh, sorry. That\'s not right');
 }
 console.log(questions[i], 'User input:', guess[i], 'Right anwser:', answers[i],'\n');
 i++;
 if ((guess[i] = prompt(questions[i]).toUpperCase().charAt(0)) === answers[i]) {
-  alert('That\'s right!');
-} else {
-  alert('Ooh, sorry. That\'s not right');
+  score++;
+  //   alert('That\'s right!');
+// } else {
+//   alert('Ooh, sorry. That\'s not right');
 }
 console.log(questions[i], 'User input:', guess[i], 'Right anwser:', answers[i],'\n');
 i++;
