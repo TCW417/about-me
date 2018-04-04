@@ -92,7 +92,7 @@ var numTries = 6;
 var cityGuess;
 var correctGuess = false;
 
-alert('Okay ' + userName + '. Ready to play another guessing game?\n\nIn this one you have six tries to guess a city I\'ve lived in.  Good luck!');
+alert('Okay ' + userName + '. Ready to play another guessing game?\n\nIn this one you have six tries to guess a Washington city I\'ve lived in.  Good luck!');
 
 do {
   cityGuess = prompt('Name a city I\'ve lived in:');
