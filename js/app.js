@@ -39,7 +39,7 @@ var userGuess; // user's guess at the number
 userName = prompt('Welcome to my About Tracy game!\n\nWhat\'s your name?');
 if (!confirm('Thanks ' + userName + '! Ready to play my game?')) {
   alert('OK ' + userName + '. No hard feelings! (We\'ll play anyway...');
-  // this is where I'd like to abort the script...  
+  // this is where I'd like to abort the script...
 }
 
 //
@@ -61,7 +61,6 @@ alert('Nicely done ' + userName + '. Ready to play a guessing game?');
 //Play the number guessing game
 
 console.log('grandKidCountdown',guessCountDown);
-for (guessCountDown = guessCountDown--; grandKidCountDown > 0; grandKidCountDown--) {
 do {
   userGuess = parseInt(prompt('How many grandkids to I have?'));
   guessCountDown--;
@@ -128,6 +127,9 @@ console.log('Finished cityGuess game, correctGuess flag:',correctGuess);
 var elIds = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7'];
 var el = new Document;
 
+el = document.getElementById('userName'); // Insert user's name
+el.textContent = userName;
+
 for (var j = 0; j < questions.length; j++) {
   el = document.getElementById(elIds[j]);
   el.textContent = questions[j] + ' You answered ' + guess[j] + ', the correct answer was ' + answers[1][j] + '.';
@@ -138,7 +140,7 @@ el.textContent = 'How many grand kids do I have? You guessed ' + (userGuess === 
 
 el = document.getElementById(elIds[6]); //element ID for question 7, City guess
 var cityHtmlCode = 'What cities have I lived in? You guessed ' + cityGuess + '. Here\'s a list of places I\'ve lived in Washinton:<ul>';
-for (var c = 0; c < myCities.length; c++) {
+for (c = 0; c < myCities.length; c++) {
   cityHtmlCode += '<li>' + myCities[c] + '</li>';
 }
 cityHtmlCode += '</ul>';
@@ -149,10 +151,10 @@ el = document.getElementById('score');
 el.textContent = score;
 
 el = document.getElementById('comment-on-score');
-if (score === 5) {
+if (score === 7) {
   el.textContent = 'A perfect score! You must know me pretty well. Nice job.';
-} else if (score >= 3 && score <= 4) {
+} else if (score >= 4 && score <= 6) {
   el.textContent = 'Not bad. Better than mere random chance. You pass!';
-} else { // (score <= 2)
+} else { // (score <= 3)
   el.textContent = 'Man, that score blows. You need to have a conversation with me sometime soon and get some answers!';
 }
