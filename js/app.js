@@ -16,7 +16,13 @@ var questions = [ 'Am I the middle sibling in my family?',
   'Do I actually have a thick head of hair I just shave off?',
   'Do I look like Santa Clause in the winter?'
 ];
-var answers = ['N', 'Y', 'Y', 'N', 'Y']; // array holding corresponding answers
+/* two dimensional array holding corresponding answers.
+ * Test for value row 0, reply with value in row 1
+ */
+var answers = [
+  ['N', 'Y', 'Y', 'N', 'Y'],
+  ['no', 'yes', 'yes', 'no', 'yes']
+];
 var score = 0; //keep score
 
 //
@@ -24,89 +30,63 @@ var score = 0; //keep score
 //
 var i = 0; // all of this code belongs in a loop but we don't know how to do that yet.  ;-)
 guess[i] = prompt(questions[i]);
-if ((guess[i].toUpperCase().charAt(0)) === answers[i]) {
+if ((guess[i].toUpperCase().charAt(0)) === answers[0][i]) {
   score++;
 }
-console.log(questions[i], 'User input:', guess[i], 'Right answer:', answers[i],'\n');
+console.log(questions[i], 'User input:', guess[i], 'Right answer:', answers[1][i],'\n');
 
-i++; // 2...
+i++; // 2
 guess[i] = prompt(questions[i]);
-if ((guess[i].toUpperCase().charAt(0)) === answers[i]) {
+if ((guess[i].toUpperCase().charAt(0)) === answers[0][i]) {
   score++;
 }
-console.log(questions[i], 'User input:', guess[i], 'Right answer:', answers[i],'\n');
+console.log(questions[i], 'User input:', guess[i], 'Right answer:', answers[1][i],'\n');
 
-i++; // 3...
+i++; // 3
 guess[i] = prompt(questions[i]);
-if ((guess[i].toUpperCase().charAt(0)) === answers[i]) {
+if ((guess[i].toUpperCase().charAt(0)) === answers[0][i]) {
   score++;
 }
-console.log(questions[i], 'User input:', guess[i], 'Right answer:', answers[i],'\n');
+console.log(questions[i], 'User input:', guess[i], 'Right answer:', answers[1][i],'\n');
 
-i++; // 4...
+i++; // 4
 guess[i] = prompt(questions[i]);
-if ((guess[i].toUpperCase().charAt(0)) === answers[i]) {
+if ((guess[i].toUpperCase().charAt(0)) === answers[0][i]) {
   score++;
 }
-console.log(questions[i], 'User input:', guess[i], 'Right answer:', answers[i],'\n');
+console.log(questions[i], 'User input:', guess[i], 'Right answer:', answers[1][i],'\n');
 
-i++; // 5...
+i++; // 5
 guess[i] = prompt(questions[i]);
-if ((guess[i].toUpperCase().charAt(0)) === answers[i]) {
+if ((guess[i].toUpperCase().charAt(0)) === answers[0][i]) {
   score++;
 }
-console.log(questions[i], 'User input:', guess[i], 'Right answer:', answers[i],'\n');
+console.log(questions[i], 'User input:', guess[i], 'Right answer:', answers[1][i],'\n');
 
 //
 // Now use the answers to fill in the html page...
 //
-
 var elIds = ['q1', 'q2', 'q3', 'q4', 'q5'];
 
 i = 0;
 var el = document.getElementById(elIds[i]);
-el.textContent = questions[i] + ' You answered ' + guess[i] + ', the correct answer was ';
-if (answers[i] === 'Y') {
-  el.textContent += 'Yes.';
-} else {
-  el.textContent += 'No.';
-}
+el.textContent = questions[i] + ' You answered ' + guess[i] + ', the correct answer was ' + answers[1][i] + '.';
 
 i++;
 el = document.getElementById(elIds[i]);
-el.textContent = questions[i] + ' You answered ' + guess[i] + ', the correct answer was ';
-if (answers[i] === 'Y') {
-  el.textContent += 'Yes.';
-} else {
-  el.textContent += 'No.';
-}
+el.textContent = questions[i] + ' You answered ' + guess[i] + ', the correct answer was ' + answers[1][i] + '.';
 
 i++;
 el = document.getElementById(elIds[i]);
-el.textContent = questions[i] + ' You answered ' + guess[i] + ', the correct answer was ';
-if (answers[i] === 'Y') {
-  el.textContent += 'Yes.';
-} else {
-  el.textContent += 'No.';
-}
+el.textContent = questions[i] + ' You answered ' + guess[i] + ', the correct answer was ' + answers[1][i] + '.';
 
 i++;
 el = document.getElementById(elIds[i]);
-el.textContent = questions[i] + ' You answered ' + guess[i] + ', the correct answer was ';
-if (answers[i] === 'Y') {
-  el.textContent += 'Yes.';
-} else {
-  el.textContent += 'No.';
-}
+el.textContent = questions[i] + ' You answered ' + guess[i] + ', the correct answer was ' + answers[1][i] + '.';
 
 i++;
 el = document.getElementById(elIds[i]);
-el.textContent = questions[i] + ' You answered ' + guess[i] + ', the correct answer was ';
-if (answers[i] === 'Y') {
-  el.textContent += 'Yes.';
-} else {
-  el.textContent += 'No.';
-}
+el.textContent = questions[i] + ' You answered ' + guess[i] + ', the correct answer was ' + answers[1][i] + '.';
 
 //
 // Fill in score and fill in final bit of trash talk.
