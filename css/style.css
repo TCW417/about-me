@@ -65,6 +65,11 @@ ol {
   border: 2px black solid;
 }
 
+#TopTen {
+  border: none;
+  background-color: inherit;
+}
+
 li {
   height: 115%;
   padding-top: 5px;
