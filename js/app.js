@@ -1,19 +1,21 @@
 'use strict';
 
-/*
- * five yes or no questions about me:
- *  1) Am I the middle sibling in my family? (no)
- *  2) Do I have an odd number of siblings? (yes)
- *  3) Am I married with children? (yes)
- *  4) Do I actually have a thick head of hair I just shave off? (no)
- *  5) Do I look like Santa Clause in the winter? (yes)
- */
+// Week 1 Project: About Me
+//
+// five yes or no questions about me:
+//  1) Am I the middle sibling in my family? (no)
+//  2) Do I have an odd number of siblings? (yes)
+//  3) Am I married with children? (yes)
+//  4) Do I actually have a thick head of hair I just shave off? (no)
+//  5) Do I look like Santa Clause in the winter? (yes)
+//  6) How many grandkids do I have? (7 for now)
+//  7) What Washington cities have I lived in.
 
 //
 // Globals
 //
-var guess = new Array(); // users answers to questions
-var questions = [ 'Am I the middle sibling in my family?', // The questions...
+var guess = []; // users answers to questions
+var questions = [ 'Am I the middle sibling in my family?', // The 5 questions...
   'Do I have an odd number of siblings?',
   'Am I married with children?',
   'Do I actually have a thick head of hair I just shave off?',
@@ -92,12 +94,13 @@ var numTries = 6;
 var cityGuess;
 var correctGuess = false;
 
+console.log('Guessing city...');
 alert('Okay ' + userName + '. Ready to play another guessing game?\n\nIn this one you have six tries to guess a Washington city I\'ve lived in.  Good luck!');
 
 do {
   cityGuess = prompt('Name a city I\'ve lived in:');
   numTries--;
-  console.log('City guess', cityGuess);
+  console.log('City guess', cityGuess, 'guesses remaining', numTries);
   for (var c = 0; c < myCities.length; c++) {
     if (cityGuess.toLowerCase() === myCities[c].toLowerCase()) {
       alert('Gread guess ' + userName + '! ' + myCities[c] + ' is a place I\'ve lived!');
@@ -117,6 +120,7 @@ do {
   }
 } while (numTries > 0);
 console.log('Finished cityGuess game, correctGuess flag:',correctGuess);
+
 //
 // updateTheHtml
 //
@@ -130,6 +134,7 @@ var el = new Document;
 el = document.getElementById('userName'); // Insert user's name
 el.textContent = userName;
 
+// Fill in results of first five questions.
 for (var j = 0; j < questions.length; j++) {
   el = document.getElementById(elIds[j]);
   el.textContent = questions[j] + ' You answered ' + guess[j] + ', the correct answer was ' + answers[1][j] + '.';
@@ -138,7 +143,9 @@ for (var j = 0; j < questions.length; j++) {
 el = document.getElementById(elIds[5]); //element ID for question 6, number guess
 el.textContent = 'How many grand kids do I have? You guessed ' + (userGuess === numberOfGrandKids ? 'correctly! ' : 'incorrectly.') + ' The answer is ' + numberOfGrandKids + '.';
 
-el = document.getElementById(elIds[6]); //element ID for question 7, City guess
+// Question 7. Did some googling here to find the insertAdjacentHTML method.
+// I build an unordered list inside element 7 of the ordered list of Q&A's.
+el = document.getElementById(elIds[6]);
 var cityHtmlCode = 'What cities have I lived in? You guessed ' + cityGuess + '. Here\'s a list of places I\'ve lived in Washinton:<ul>';
 for (c = 0; c < myCities.length; c++) {
   cityHtmlCode += '<li>' + myCities[c] + '</li>';
@@ -147,9 +154,11 @@ cityHtmlCode += '</ul>';
 console.log(cityHtmlCode);
 el.insertAdjacentHTML('afterbegin', cityHtmlCode);
 
+//Insert score into a <span> element in the HTML
 el = document.getElementById('score');
 el.textContent = score;
 
+//Add some trash talk relative to user's score...
 el = document.getElementById('comment-on-score');
 if (score === 7) {
   el.textContent = 'A perfect score! You must know me pretty well. Nice job.';
