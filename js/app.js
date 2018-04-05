@@ -39,7 +39,7 @@ var userGuess; // user's guess at the number
 // getUsersName
 //
 userName = prompt('Welcome to my About Tracy game!\n\nWhat\'s your name?');
-if (!confirm('Thanks ' + userName + '! Ready to play my game?')) {
+if (!confirm('Thanks ' + userName + '! Ready to play my game?\n\n(I\'ll show you your results when we\'re all done playing.)')) {
   alert('OK ' + userName + '. No hard feelings! (We\'ll play anyway...');
   // this is where I'd like to abort the script...
 }
@@ -57,7 +57,7 @@ for (var i = 0; i < questions.length; i++) {
   }
   console.log(questions[i], 'User input:', guess[i], 'Right answer:', answers[1][i],'\n');
 }
-alert('Nicely done ' + userName + '. Ready to play a guessing game?');
+alert('Thank you for playing! ' + userName + '. Ready to play a guessing game?');
 
 
 //Play the number guessing game
@@ -103,7 +103,7 @@ do {
   console.log('City guess', cityGuess, 'guesses remaining', numTries);
   for (var c = 0; c < myCities.length; c++) {
     if (cityGuess.toLowerCase() === myCities[c].toLowerCase()) {
-      alert('Gread guess ' + userName + '! ' + myCities[c] + ' is a place I\'ve lived!');
+      alert('Great guess ' + userName + '! ' + myCities[c] + ' is a place I\'ve lived!');
       correctGuess = true;
       score++;
       break;
