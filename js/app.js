@@ -84,7 +84,7 @@ function previousQuestionResponse(theyGotItRight) {
     ['Nice! You got that one right!', 'Good guess!', 'You must know me pretty well!', 'How did you know that?!','Wow! You\'re a genius!','You Are Amazing!!'],
     ['Uh, no, that\'s not right.', 'Nope. Sorry.', 'We need to talk, serously. ;)','Come on! You can do better than that!','Dude. Seriously?','Oh man. Uh, no.']
   ];
-  console.log(responses)
+
   var i = Math.floor(Math.random()*responses[0].length);
   if (theyGotItRight) {
     console.log('returning RIGHT',responses[right][i],'i',i);
@@ -99,9 +99,10 @@ function previousQuestionResponse(theyGotItRight) {
 //This function uses a global variable called userName.
 function guessMyNumber(rightAnswer, numberOfTries){
   var userGuess;
+  var previousGuessResponse = '';
   console.log(rightAnswer, numberOfTries);
   do {
-    userGuess = parseInt(prompt('How many grandkids to I have?'));
+    userGuess = parseInt(prompt(previousGuessResponse + 'How many grandkids to I have?'));
     numberOfTries--;
     console.log('Grandkid guess:', userGuess, 'Guesses to go', numberOfTries);
     console.log('typeof input',typeof userGuess);
@@ -111,12 +112,12 @@ function guessMyNumber(rightAnswer, numberOfTries){
         score++;
         break;
       } else if (numberOfTries > 0) {
-        alert('Close ' + userName + ', but your a bit ' + (userGuess > rightAnswer ? 'high.' : 'low. ' + numberOfTries + (numberOfTries === 1 ? ' guess' : ' guesses') + ' to go!'));
+        previousGuessResponse = 'Close ' + userName + ', but your a bit ' + (userGuess > rightAnswer ? 'high.' : 'low. ') + numberOfTries + (numberOfTries === 1 ? ' guess' : ' guesses') + ' to go!\n\n';
       } else {
         alert('Close ' + userName + ', but your a bit ' + (userGuess > rightAnswer ? 'high.' : 'low. ') + 'And you\'re out of guesses!');
       }
     } else {
-      alert('Please enter a number as your answer. ' + numberOfTries + (numberOfTries === 1 ? ' guess' : ' guesses') + ' to go!');
+      previousGuessResponse = 'Please enter a number as your answer. ' + numberOfTries + (numberOfTries === 1 ? ' guess' : ' guesses') + ' to go!\n\n';
     }
   } while (numberOfTries > 0);
   console.log('done guessing');
@@ -131,12 +132,13 @@ function guessMyCity(){
 
   var numTries = 6;
   var correctGuess = false;
+  var previousGuessResponse = '';
 
   console.log('Guessing city...');
   alert('Okay ' + userName + '. Ready to play another guessing game?\n\nIn this one you have six tries to guess a Washington city I\'ve lived in.  Good luck!');
 
   do {
-    cityGuess = prompt('Name a city I\'ve lived in:');
+    cityGuess = prompt(previousGuessResponse + 'Name a city I\'ve lived in:');
     numTries--;
     console.log('City guess', cityGuess, 'guesses remaining', numTries);
     for (var c = 0; c < myCities.length; c++) {
@@ -148,11 +150,10 @@ function guessMyCity(){
       }
     }
     if (correctGuess === false) {
-      var alertString = 'No, I haven\'t lived in ' + cityGuess + '. ';
+      previousGuessResponse = 'No, I haven\'t lived in ' + cityGuess + '.\n\n';
       if (numTries >= 1) {
-        alertString += 'Try again. You have ' + numTries + (numTries > 1 ? ' guesses' : ' guess') + ' remaining.';
+        previousGuessResponse += 'Try again. You have ' + numTries + (numTries > 1 ? ' guesses' : ' guess') + ' remaining.\n\n';
       }
-      alert(alertString);
     } else {
       break;
     }
