@@ -49,7 +49,7 @@ updateTheHtml();
 //
 function getUsersName() {
   var nameOfUser = prompt('Welcome to my About Tracy game!\n\nWhat\'s your name?');
-  if (!confirm('Thanks ' + nameOfUser + '! Ready to play my game?\n\n(I\'ll show you your results when we\'re all done playing.)')) {
+  if (!confirm('Thanks ' + nameOfUser + '! Ready to play my game?')) {
     alert('OK ' + nameOfUser + '. No hard feelings! (We\'ll play anyway...');
   }
   return nameOfUser;
@@ -63,13 +63,36 @@ function getUsersName() {
 //
 function playYesOrNoGame(){
   for (var i = 0; i < questions.length; i++) {
-    guess[i] = prompt(questions[i]);
+    if (i > 0) {
+      guess[i] = prompt(previousQuestionResponse(guess[i-1].toUpperCase().charAt(0) === answers[0][i-1]) + '\n\n' + questions[i]);
+    }
+    else {
+      guess[i] = prompt(questions[i]);
+    }
     if ((guess[i].toUpperCase().charAt(0)) === answers[0][i]) {
       score++;
     }
     console.log(questions[i], 'User input:', guess[i], 'Right answer:', answers[1][i],'\n');
   }
-  alert('Thank you for playing! ' + userName + '. Ready to play a guessing game?');
+  alert(previousQuestionResponse(guess[i-1].toUpperCase().charAt(0) === answers[0][i-1]) + '\n\n' + 'Thank you for playing! ' + userName + '. Ready to play a guessing game?');
+}
+
+// This function pics a random right or wrong answer response.
+function previousQuestionResponse(theyGotItRight) {
+  const right = 0, wrong = 1;
+  const responses = [
+    ['Nice! You got that one right!', 'Good guess!', 'You must know me pretty well!', 'How did you know that?!','Wow! You\'re a genius!','You Are Amazing!!'],
+    ['Uh, no, that\'s not right.', 'Nope. Sorry.', 'We need to talk, serously. ;)','Come on! You can do better than that!','Dude. Seriously?','Oh man. Uh, no.']
+  ];
+  console.log(responses)
+  var i = Math.floor(Math.random()*responses[0].length);
+  if (theyGotItRight) {
+    console.log('returning RIGHT',responses[right][i],'i',i);
+    return responses[right][i];
+  } else {
+    console.log('returning WRONG',responses[wrong][i],'i',i);
+    return responses[wrong][i];
+  }
 }
 
 //Play the number guessing game: guessMyNumber(numberOfGrandKids, guessCountDown);
